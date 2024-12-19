@@ -10,17 +10,12 @@ dotenv.config();
 const app = express();
 
 // Konfigurasi CORS
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://agro-verse-front-end-three.vercel.app"
-  );
-  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
-
-app.use(cors()); // Middleware CORS tanpa opsi untuk debugging
+const corsOptions = {
+  origin: "*", // Izinkan semua origin sementara untuk debug
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions)); // Middleware CORS harus di paling atas
 app.use(express.json());
 
 // Debugging Middleware
@@ -53,9 +48,6 @@ app.use("/api/webinar", WebinarRoutes);
 
 const UserRoutes = require("./routes/user");
 app.use("/api/user", UserRoutes);
-
-// Menangani OPTIONS preflight request
-app.options("*", cors());
 
 // Menjalankan server
 const PORT = process.env.PORT || 5000;
