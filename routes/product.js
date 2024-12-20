@@ -181,7 +181,12 @@ router.put("/:id", authenticateUser, checkRole("admin"), async (req, res) => {
       const urlsToDelete = existingUrls.filter((url) => !images.includes(url));
       if (urlsToDelete.length > 0) {
         console.log("Menghapus gambar lama:", urlsToDelete);
-        await ProductImage.destroy({ where: { image_url: urlsToDelete } }); // Ubah 'url' menjadi 'image_url'
+        await ProductImage.destroy({
+          where: {
+            image_url: urlsToDelete,
+            product_id: id, // Tambahkan filter berdasarkan product_id
+          },
+        });
       }
 
       // Tentukan gambar yang perlu ditambahkan
