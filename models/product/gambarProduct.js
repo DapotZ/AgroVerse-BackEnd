@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = require("../../config/config").sequelize;
 const Product = require("./product");
 
-const ProductImage = sequelize.define("ProductImage", {
+const ProductImage = sequelize.define("productimage", {
   image_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

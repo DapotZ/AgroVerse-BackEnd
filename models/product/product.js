@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = require("../../config/config").sequelize;
 const Category = require("./category");
 
-const Product = sequelize.define("Product", {
+const Product = sequelize.define("product", {
   product_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

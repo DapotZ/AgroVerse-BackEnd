@@ -3,7 +3,7 @@ const sequelize = require("../../config/config").sequelize;
 const Product = require("./product");
 const User = require("../user/user");
 
-const ProductRating = sequelize.define("ProductRating", {
+const ProductRating = sequelize.define("productrating", {
   rating_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
