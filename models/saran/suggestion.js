@@ -3,7 +3,7 @@ const sequelize = require("../../config/config").sequelize;
 const User = require("../user/user");
 
 const Suggestion = sequelize.define(
-  "Suggestion",
+  "suggestion",
   {
     suggestion_id: {
       type: DataTypes.INTEGER,

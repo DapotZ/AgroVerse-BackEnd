@@ -3,7 +3,7 @@ const sequelize = require("../../config/config").sequelize;
 const User = require("../user/user");
 const Post = require("../forum/posts");
 
-const Comment = sequelize.define("Comment", {
+const Comment = sequelize.define("comment", {
   comment_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

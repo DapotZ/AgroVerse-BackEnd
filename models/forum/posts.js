@@ -4,7 +4,7 @@ const User = require("../user/user"); // Pastikan model User sudah benar diimpor
 
 // Definisi model Post
 const Post = sequelize.define(
-  "Post",
+  "post",
   {
     post_id: {
       type: DataTypes.INTEGER,

@@ -4,7 +4,7 @@ const User = require("../user/user");
 const Post = require("../forum/posts");
 
 const PostLike = sequelize.define(
-  "PostLike",
+  "postlike",
   {
     user_id: {
       type: DataTypes.STRING,
